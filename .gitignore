@@ -1,0 +1,17 @@
+# Local Git metadata used because .git is read-only in this workspace.
+.local-git/
+
+# Workspace-managed directories.
+.agents/
+.codex/
+.aws/
+
+# Editor and operating-system artifacts.
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Local working instructions.
+/AGENTS.md
