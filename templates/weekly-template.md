@@ -1,39 +1,15 @@
-# Week NN — [Short title]
+## Week NN — [Short title]
 
-## 1. Week and date range
+**[Date range]**
 
-**Week:** NN  
-**Date range:** [YYYY-MM-DD to YYYY-MM-DD, or unknown]
+### Activities completed
 
-## 2. Objectives
-
-- I aimed to [objective for this week].
-
-## 3. Work completed
-
-- I completed [activity or result].
-
-## 4. Meetings and important decisions
-
-- I discussed [topic] with [participants] on [date, or unknown].
-- I agreed to [decision or action].
-
-## 5. Research and technical findings
-
-- I learned [finding].
+- I completed [specific activity and its outcome].
 - I tested [experiment] and observed [result].
+
+### Ongoing work and next steps
+
 - I am investigating [work still in progress].
+- I will [next task].
 
-## 6. Challenges and open questions
-
-- I still need to resolve [issue or question].
-
-## 7. Next steps
-
-- I will [planned task].
-
-## 8. References and resources
-
-- I used [public resource or link within this repository].
-
-<!-- Keep concise factual English in the first person. Separate completed work, ongoing investigation, and plans. Do not invent dates or results. Remove unused prompts. -->
+<!-- I append this entry to Dissertation-Notebook.md, replace the placeholders with factual information, and remove unused prompts. -->

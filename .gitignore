@@ -1,6 +1,3 @@
-# Local Git metadata used because .git is read-only in this workspace.
-.local-git/
-
 # Workspace-managed directories.
 .agents/
 .codex/
