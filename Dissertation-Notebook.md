@@ -9,23 +9,23 @@
 
 I record my weekly activities in this notebook. My dissertation objective is to design and prototype a framework integrating C2PA content credentials with EBSI to establish a verifiable chain of trust for digital content. I maintain my [dissertation sources](https://github.com/joaovarela14/Thesis_Latex) separately and use Overleaf for shared writing.
 
-## Week 01 — Project preparation and Git integration
+## Week 03 — C2PA research, dissertation writing, and signing demonstration
 
-**28 September–4 October 2026**
+**12–18 October 2026**
 
 ### Activities completed
 
-- I met with Paulo Bartolomeu and André Zúquete to discuss the dissertation, including manifests, internal and external storage, digital signatures, and authenticity metadata. Paulo created our shared Overleaf project using the University of Aveiro dissertation template.
-- I configured my LaTeX repository with separate Overleaf and GitHub remotes and successfully tested synchronization with both using a test change.
-- I read introductory material about C2PA and presented my initial understanding of provenance metadata, manifests, and signatures during the meeting.
-- I prepared the cloned C2PA command-line tool repository for exploration and began investigating the application form for an EBSI conformance environment.
+- I researched projects, papers, and existing implementations that use C2PA to identify related work and possible reference systems for my dissertation. I surveyed the Content Authenticity tools and SDKs, including `c2pa-rs`, `c2patool`, and the Python and JavaScript libraries, alongside application projects such as Origin Lens, Fraunhofer FAMIUM, and the Qualabs live video toolkit.
+- I identified academic work on C2PA video streaming, provenance security, privacy, and the use of watermarks and fingerprints as soft bindings. I organized these materials to compare their scope, available implementations, evaluation methods, and relevance to my proposed C2PA–EBSI framework.
+- I added C2PA background material to the shared Overleaf dissertation, covering manifests, claims, assertions, ingredients, storage, content bindings, digital signatures, and validation. I clarified the distinction between content integrity, trust in the signer, and the factual truth of the content.
+- I carried out the planned C2PA demonstration with private signing keys and certificates. I created a local test root and my own signing key and certificate, and used the demonstration to explain the signing workflow and the role of trust anchors in verification.
+- I investigated PKCS#11 and external signing as possible ways to use protected signing keys in a later prototype. This remained a conceptual investigation; I did not implement a token or HSM integration.
 
 ### Ongoing work and next steps
 
-- I will explore the C2PA CLI, read sample manifests, create a signed output, and prepare a practical demonstration, following my supervisors' recommendation.
-- I am investigating the environment application procedure. I will prepare a justification for Paulo's review before submission; Paulo may submit the request if university affiliation is required.
-- I will review European and international provenance initiatives and investigate producer identity, issuer trust, governance, wallets, and potential EBC/EPC integration before selecting an architecture.
-- I am waiting for a related digital wallet dissertation from André.
+- I will narrow the related-work selection and read the most relevant papers in depth, separating existing C2PA capabilities from the contribution I intend to make through EBSI integration.
+- I will refine the C2PA background in Overleaf and connect it to producer identity, issuer trust, and Verifiable Credentials. I have not selected the final integration architecture or governance model.
+- I will document the demonstration's detailed validation results and extend the experiments to content alteration, metadata removal, and embedded versus external manifests. The local test certificates do not establish public identity or EBSI integration.
 
 ## Week 02 — C2PA experiments and demonstration preparation
 
@@ -49,6 +49,24 @@ I record my weekly activities in this notebook. My dissertation objective is to 
 - I will investigate signing-certificate trust configuration and how Verifiable Credentials and EBSI could establish trust in producer identity and issuers. I have not selected a final credential schema, integration architecture, or governance model.
 - I will continue the literature review and environment request. I have not yet confirmed submission or access to the environment.
 
+## Week 01 — Project preparation and Git integration
+
+**28 September–4 October 2026**
+
+### Activities completed
+
+- I met with Paulo Bartolomeu and André Zúquete to discuss the dissertation, including manifests, internal and external storage, digital signatures, and authenticity metadata. Paulo created our shared Overleaf project using the University of Aveiro dissertation template.
+- I configured my LaTeX repository with separate Overleaf and GitHub remotes and successfully tested synchronization with both using a test change.
+- I read introductory material about C2PA and presented my initial understanding of provenance metadata, manifests, and signatures during the meeting.
+- I prepared the cloned C2PA command-line tool repository for exploration and began investigating the application form for an EBSI conformance environment.
+
+### Ongoing work and next steps
+
+- I will explore the C2PA CLI, read sample manifests, create a signed output, and prepare a practical demonstration, following my supervisors' recommendation.
+- I am investigating the environment application procedure. I will prepare a justification for Paulo's review before submission; Paulo may submit the request if university affiliation is required.
+- I will review European and international provenance initiatives and investigate producer identity, issuer trust, governance, wallets, and potential EBC/EPC integration before selecting an architecture.
+- I am waiting for a related digital wallet dissertation from André.
+
 ---
 
-I append one entry per week to this file using the [weekly entry template](templates/weekly-template.md), summarizing completed activities and separating ongoing work from planned tasks.
+I add one entry per week to this file using the [weekly entry template](templates/weekly-template.md), placing the most recent week first, summarizing completed activities, and separating ongoing work from planned tasks.
