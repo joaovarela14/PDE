@@ -9,6 +9,41 @@
 
 I record my weekly activities in this notebook. My dissertation objective is to design and prototype a framework integrating C2PA content credentials with EBSI to establish a verifiable chain of trust for digital content. I maintain my [dissertation sources](https://github.com/joaovarela14/Thesis_Latex) separately and use Overleaf for shared writing.
 
+## Week 05 — Literature review, C2PA workflows, and PDE presentation
+
+**26 October–1 November 2026**
+
+### Activities completed
+
+- I drafted an initial Literature Review chapter in English, comparing scientific papers, reports, and projects such as Project Origin, C2PA-MCNL, IIRY, C2PA Onchain, and Microsoft's C2PA Extension Validator. I added project–publication links and organised the comparison around identity, issuer authority, and trust.
+- I extended the review beyond the six initial documents using the newer collection of papers and projects. I examined work on C2PA–eIDAS integration (Wagenpfeil et al.), issuer accreditation (Frutuoso et al.), long-term signature verification (Hyla and Pejaś), and user trust in provenance-enabled media (Feng et al.), alongside studies of privacy, soft bindings, security, and the Origin Lens verifier. I prepared a focused search specification and distinguished detailed readings, abstract-level reviews, and references requiring further analysis.
+- I investigated the proposal to register signatures on a blockchain, using AMP and broker-assisted trust chains as precedents. I compared direct signature registration with anchoring a package of validation evidence, and examined timestamping and evidence renewal. This remained a literature investigation; I did not implement or benchmark these alternatives.
+- I revised and improved the dissertation text in Overleaf, including the C2PA background. I added creation, editing, and verification workflows that distinguish users from tools, supported by a sixth figure. I also incorporated examples for JPEG, PNG, MP4, WAV, and MP3 and further explanations of manifest embedding and verification into the shared Overleaf document.
+- I changed citations to point directly to sections of the relevant specifications. I also restored local LaTeX compilation and preview after synchronising changes from Overleaf, keeping the local build configuration separate, and corrected bibliography and layout warnings. I checked the resulting PDF.
+- I prepared the state-of-the-art presentation for the PDE course, using three slides to introduce the problem, synthesise related papers and projects, and explain how the review informs the proposed work. I adapted the speaking notes to the three-minute limit and used accreditation revocation to illustrate the research questions and planned evaluation.
+
+### Ongoing work and next steps
+
+- I am continuing to analyse relevant papers and projects and improve the dissertation text in Overleaf.
+- I will prepare the C2PA demonstration discussed in the meetings, using private keys and test certificates I created to show manifest creation, signing, and verification.
+- I will begin turning the state-of-the-art bullet points in Overleaf into coherent prose, describing and comparing the existing work.
+
+## Week 04 — C2PA illustrations and detailed literature analysis
+
+**19–25 October 2026**
+
+### Activities completed
+
+- I prepared and revised original C2PA diagrams in Canva, using the specification's explanatory approach as a reference. I used concrete examples to explain manifests, ingredients, storage, content bindings, and validation.
+- I shortened and reorganised the C2PA background chapter and integrated five figures with captions and references. I corrected the ingredient-composition diagram, documented the purpose of each selected figure, and compiled and checked the illustrated chapter.
+- I collected the six papers and research reports listed in my initial state-of-the-art material, checked the downloaded PDFs, and indexed their titles and source links.
+- I prepared detailed reading notes for all six documents, recording relevant pages, sections, figures, and tables. I compared their approaches, trust assumptions, evaluations, and limitations, and identified implications for the C2PA–EBSI framework, including issuer identity, blockchain evidence, revocation, and long-term verification.
+
+### Ongoing work and next steps
+
+- I will turn the reading notes into a comparative Literature Review chapter, connect repositories to associated publications, and separate technical background from the discussion of existing solutions and research gaps.
+- I will refine the questions raised by the review, particularly the role of EBSI accreditation and the evidence needed for later verification. Candidate architectures, experiments, and preservation mechanisms remain proposals to assess.
+
 ## Week 03 — C2PA research, dissertation writing, and signing demonstration
 
 **12–18 October 2026**
