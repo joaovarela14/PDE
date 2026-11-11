@@ -9,6 +9,26 @@
 
 I record my weekly activities in this notebook. My dissertation objective is to design and prototype a framework integrating C2PA content credentials with EBSI to establish a verifiable chain of trust for digital content. I maintain my [dissertation sources](https://github.com/joaovarela14/Thesis_Latex) separately and use Overleaf for shared writing.
 
+## Week 06 — C2PA signing, blockchain alternatives, and Besu experiments
+
+**2–8 November 2026**
+
+### Activities completed
+
+- I refined the practical guide for creating a local certification chain and signing C2PA manifests. I clarified the roles of private keys, certificates, trust anchors, and certificate usage settings, and demonstrated signing and verification with my local test certificates during the supervisor meeting.
+- I investigated signing with the Citizen Card through PKCS#11. I confirmed that the local `c2patool` supports an external signing program through `--signer-path`, identifying a possible bridge to the card's middleware. I did not implement this bridge or test a physical card; algorithm and certificate compatibility remain to be checked.
+- I discussed the pending EBSI sandbox request with my supervisors and the possibility of exploring an existing environment. I reviewed alternatives to EBSI, including consortium, public, and hybrid approaches, focusing on authorised registration, open verification, traceability, and cost. Besu emerged as a practical option for local experiments without waiting for external admission; the final technology and architecture remained open.
+- I tested a local Besu network with four QBFT validators in Docker and a contract for authorised registration of linked provenance events. I validated two C2PA-signed JPEG versions against the local test root, registered their complete-file SHA-256 hashes, and linked the second record to the first. The second version added a manifest referencing the first without changing the pixels.
+- I confirmed that all four local endpoints returned the registered data without a wallet or authentication, and that writes from an unauthorised account or after removal of a producer's authorisation were rejected. Earlier records remained accessible. These tests did not establish certificate revocation status or historical signature validity.
+- I prepared a reusable Besu environment with the contract, scripts, Docker configuration, and persistent node data. I repeated the experiment and confirmed that records survived restarting the nodes, including records from the initial run. I preserved the original source image and stopped the containers after testing.
+
+### Ongoing work and next steps
+
+- I will develop a first architecture proposal for recording content changes, defining the minimum ledger information, links between versions, and registration granularity while considering cost.
+- I will define how blockchain accounts relate to C2PA signer identity and producer accreditation, and what evidence must be preserved for historical verification.
+- I will continue following up on EBSI access and comparing infrastructure options. The local Besu experiment does not establish institutional trust, a public verification service, or independence between operators: all four validators run on one computer.
+- I will explore the Citizen Card integration further, beginning with certificate and algorithm compatibility, and prepare the Besu workflow for demonstration to my supervisors.
+
 ## Week 05 — Literature review, C2PA workflows, and PDE presentation
 
 **26 October–1 November 2026**
