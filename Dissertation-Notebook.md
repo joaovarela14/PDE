@@ -4,10 +4,29 @@
 
 **Institution:** University of Aveiro, Department of Electronics, Telecommunications and Informatics (DETI)  
 **Student:** João Varela  
-**Supervisor:** Paulo Jorge de Campos Bartolomeu  
-**Co-supervisor:** André Ventura da Cruz Marnôto Zúquete
+**Supervisor:** Professor Paulo Bartolomeu  
+**Co-supervisor:** Professor André Zúquete
 
 I record my weekly activities in this notebook. My dissertation objective is to design and prototype a framework integrating C2PA content credentials with EBSI to establish a verifiable chain of trust for digital content. I maintain my [dissertation sources](https://github.com/joaovarela14/Thesis_Latex) separately and use Overleaf for shared writing.
+
+## Week 07 — PKCS#11 signing and content-versioning architecture
+
+**9–15 November 2026**
+
+### Activities completed
+
+- I reviewed the Besu prototype, including the roles of validators and producer accounts, persistent node data, and the distinction between Besu software and EBSI infrastructure. In the supervisor meeting, I agreed with Professor Paulo Bartolomeu to continue local Besu experiments while pursuing EBSI access. I confirmed that an automatic acknowledgement of my request existed, but sandbox access remained unresolved.
+- I analysed the *SmartCMD* dissertation Professor André Zúquete shared and reviewed the previous Edufiable integration. I found that the CMD OAuth flow provided authentication and identity attributes, rather than remote data signing. In the official CMD signing implementation I examined, RSA-PSS was unsupported, preventing direct use of that path for a C2PA claim signature. I prioritised the Citizen Card integration and did not make live CMD signing requests.
+- I implemented a separate Rust external signer using the existing `c2patool --signer-path` interface and a PKCS#11 module. I added token and certificate inspection, certificate selection by fingerprint, certificate-chain handling, and RSA-PSS and ECDSA signing, with independent verification before returning each signature.
+- I validated the signer with SoftHSM: nine Rust tests and eighteen integration checks passed, including authentication failures, missing tokens, incomplete chains, and ambiguous certificate selection. I created C2PA-signed images with both algorithms; they returned `Valid` without configured trust and `Trusted` with the laboratory root. These results demonstrate software-token integration; I have not tested the physical Citizen Card or its certificate.
+- I prepared an initial architecture proposal for preserving and verifying content edits using C2PA and Besu, with traceability and cost as the main criteria. I proposed keeping published files and supporting evidence outside the blockchain and registering hashes and version links on the ledger. I addressed configurable registration granularity, branches, permissions, consistency with C2PA ingredients, and recovery after publication failures. I also assembled the original and signed sample images for future crop and resize experiments.
+- I created six editable diagrams in Miro covering the architecture, publication sequence, data model, verification, version branches and cost, and failure recovery. I checked the diagram sources and local SVG/PNG renderings. The diagrams describe a proposal; I did not implement the new editing workflow or contract extensions this week.
+
+### Ongoing work and next steps
+
+- I will validate the signer with a USB reader and the physical Citizen Card, checking supported mechanisms, certificate compatibility, and trust separately. SoftHSM results do not establish compatibility with the card.
+- I will discuss the architecture and diagrams with my supervisors and demonstrate real image edits linked through C2PA and Besu. The existing two-version experiment changes the manifest without changing the pixels; the crop and resize workflow remains to be implemented and evaluated.
+- I will define the link between ledger accounts and signer identity, the evidence required for historical verification, and the evaluation of registration cost. I will continue following up on EBSI access while using Besu for local development.
 
 ## Week 06 — C2PA signing, blockchain alternatives, and Besu experiments
 
@@ -110,7 +129,7 @@ I record my weekly activities in this notebook. My dissertation objective is to 
 
 ### Activities completed
 
-- I met with Paulo Bartolomeu and André Zúquete to discuss the dissertation, including manifests, internal and external storage, digital signatures, and authenticity metadata. Paulo created our shared Overleaf project using the University of Aveiro dissertation template.
+- I met with Professor Paulo Bartolomeu and Professor André Zúquete to discuss the dissertation, including manifests, internal and external storage, digital signatures, and authenticity metadata. Professor Paulo Bartolomeu created our shared Overleaf project using the University of Aveiro dissertation template.
 - I configured my LaTeX repository with separate Overleaf and GitHub remotes and successfully tested synchronization with both using a test change.
 - I read introductory material about C2PA and presented my initial understanding of provenance metadata, manifests, and signatures during the meeting.
 - I prepared the cloned C2PA command-line tool repository for exploration and began investigating the application form for an EBSI conformance environment.
@@ -118,9 +137,9 @@ I record my weekly activities in this notebook. My dissertation objective is to 
 ### Ongoing work and next steps
 
 - I will explore the C2PA CLI, read sample manifests, create a signed output, and prepare a practical demonstration, following my supervisors' recommendation.
-- I am investigating the environment application procedure. I will prepare a justification for Paulo's review before submission; Paulo may submit the request if university affiliation is required.
+- I am investigating the environment application procedure. I will prepare a justification for Professor Paulo Bartolomeu's review before submission; Professor Paulo Bartolomeu may submit the request if university affiliation is required.
 - I will review European and international provenance initiatives and investigate producer identity, issuer trust, governance, wallets, and potential EBC/EPC integration before selecting an architecture.
-- I am waiting for a related digital wallet dissertation from André.
+- I am waiting for a related digital wallet dissertation from Professor André Zúquete.
 
 ---
 
